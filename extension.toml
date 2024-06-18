@@ -1,0 +1,7 @@
+id = "firebase-security-rules"
+name = "Firebase Security Rules"
+version = "0.0.1"
+schema_version = 1
+authors = ["Guilherme Caldas <gcaldas@chemis.tech>"]
+description = "A Firebase Security Rules language syntax hightligh"
+repository = "https://github.com/ChemisTechlabs/zed-firebase-secutiry-rules"
