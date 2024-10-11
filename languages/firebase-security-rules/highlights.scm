@@ -15,6 +15,10 @@
 
 ; Punctuation
 ["(" ")" "{" "}" "[" "]" "," "." ";"] @punctuation.delimiter
+(path "/" @ponctuation.special) @none
+(segment
+    "{" @ponctuation.special
+    "}" @ponctuation.special) @none
 
 ; Strings
 (string) @string
@@ -49,7 +53,8 @@
 (path) @string.special
 
 ; Database paths
-(database_path) @string.special
+(database_path
+    "/databases/" @string.special) @none
 
 ; Comments
 (comment) @comment
