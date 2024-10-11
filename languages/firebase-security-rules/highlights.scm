@@ -1,57 +1,55 @@
 ; Keywords
-; "rules_version" @keyword
-; "service" @keyword
-; "match" @keyword
-; "allow" @keyword
-; "if" @keyword
-; "function" @keyword
-; "let" @keyword
-; "const" @keyword
-; "return" @keyword
+(rule_declaration "rules_version" @keyword)
+(service_declaration "service" @keyword)
+(match_block "match" @keyword)
+(allow_rule "allow" @keyword)
+(allow_rule "if" @keyword)
+(function_declaration "function" @keyword)
+(variable_declaration "let" @keyword)
+(variable_declaration "const" @keyword)
+(return_statement "return" @keyword)
+; Operators
+[
+  "=" ":" "+" "-" "*" "/" "%" "<" ">" "<=" ">=" "==" "!=" "&&" "||" "?" "in" "is"
+] @operator
+
+; Punctuation
+["(" ")" "{" "}" "[" "]" "," "." ";"] @punctuation.delimiter
+
+; Strings
+(string) @string
+
+; Numbers
+(number) @number
+
+; Booleans
+(boolean) @boolean
+
+
+; Functions
+(function_declaration (identifier) @function)
+(function_call (identifier) @function)
+
+; Variables
+(identifier) @variable
+
+; Parameters
+(parameter_list (identifier) @parameter)
+
+; Fields
+(field_access (identifier) @property)
 
 ; Operations
-; (operation) @function.builtin
+(operation) @constant
 
-; ; Identifiers
-; (identifier) @variable
+; Service names
+(service_name) @type
 
-; ; Functions
-; (function_declaration
-;   (identifier) @function)
+; Paths
+(path) @string.special
 
-; (function_call
-;   (identifier) @function)
+; Database paths
+(database_path) @string.special
 
-; ; Strings
-; (string) @string
-
-; ; Numbers
-; (number) @number
-
-; ; Booleans
-; (boolean) @boolean
-
-; ; Operators
-; "=" @operator
-; "&&" @operator
-; "||" @operator
-; "==" @operator
-; "!=" @operator
-; "<" @operator
-; ">" @operator
-; "<=" @operator
-; ">=" @operator
-
-; ; Punctuation
-; "(" @punctuation.bracket
-; ")" @punctuation.bracket
-; "{" @punctuation.bracket
-; "}" @punctuation.bracket
-; "," @punctuation.delimiter
-; ";" @punctuation.delimiter
-
-; ; Paths
-; (path) @string.special
-
-; ; Comments
+; Comments
 (comment) @comment
