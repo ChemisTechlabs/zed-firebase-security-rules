@@ -1,57 +1,57 @@
 ; Keywords
-"rules_version" @keyword
-"service" @keyword
-"match" @keyword
-"allow" @keyword
-"if" @keyword
-"function" @keyword
-"let" @keyword
-"const" @keyword
-"return" @keyword
+; "rules_version" @keyword
+; "service" @keyword
+; "match" @keyword
+; "allow" @keyword
+; "if" @keyword
+; "function" @keyword
+; "let" @keyword
+; "const" @keyword
+; "return" @keyword
 
 ; Operations
-(operation) @function.builtin
+; (operation) @function.builtin
 
-; Identifiers
-(identifier) @variable
+; ; Identifiers
+; (identifier) @variable
 
-; Functions
-(function_declaration
-  (identifier) @function)
+; ; Functions
+; (function_declaration
+;   (identifier) @function)
 
-(function_call
-  (identifier) @function)
+; (function_call
+;   (identifier) @function)
 
-; Strings
-(string) @string
+; ; Strings
+; (string) @string
 
-; Numbers
-(number) @number
+; ; Numbers
+; (number) @number
 
-; Booleans
-(boolean) @boolean
+; ; Booleans
+; (boolean) @boolean
 
-; Operators
-"=" @operator
-"&&" @operator
-"||" @operator
-"==" @operator
-"!=" @operator
-"<" @operator
-">" @operator
-"<=" @operator
-">=" @operator
+; ; Operators
+; "=" @operator
+; "&&" @operator
+; "||" @operator
+; "==" @operator
+; "!=" @operator
+; "<" @operator
+; ">" @operator
+; "<=" @operator
+; ">=" @operator
 
-; Punctuation
-"(" @punctuation.bracket
-")" @punctuation.bracket
-"{" @punctuation.bracket
-"}" @punctuation.bracket
-"," @punctuation.delimiter
-";" @punctuation.delimiter
+; ; Punctuation
+; "(" @punctuation.bracket
+; ")" @punctuation.bracket
+; "{" @punctuation.bracket
+; "}" @punctuation.bracket
+; "," @punctuation.delimiter
+; ";" @punctuation.delimiter
 
-; Paths
-(path) @string.special
+; ; Paths
+; (path) @string.special
 
-; Comments
+; ; Comments
 (comment) @comment

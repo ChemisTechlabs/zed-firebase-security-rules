@@ -1,3 +1,4 @@
 name = "Firebase Rules"
 grammar = "firebase-security-rules"
-path_suffixes = ["firestore.rules", "storage.rules", "rules"]
+path_suffixes = ["rules"]
+line_comments = ["// "]
