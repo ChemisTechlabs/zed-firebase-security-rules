@@ -3,7 +3,7 @@ name = "Firebase Security Rules"
 version = "0.0.1"
 schema_version = 1
 authors = ["Guilherme Caldas <gcaldas@chemis.tech>"]
-description = "Firebase Security Rules language support."
+description = "Firebase Security Rules language syntax highlight."
 repository = "https://github.com/ChemisTechlabs/zed-firebase-security-rules"
 
 [grammars.firebase_rules]
