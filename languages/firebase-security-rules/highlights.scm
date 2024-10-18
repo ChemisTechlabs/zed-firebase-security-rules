@@ -7,6 +7,8 @@
 (function_declaration "function" @keyword)
 (variable_declaration "let" @keyword)
 (variable_declaration "const" @keyword)
+(if_statement "if" @keyword)
+(if_statement "else" @keyword)
 (return_statement "return" @keyword)
 ; Operators
 [
