@@ -1,3 +1,3 @@
-(service_declaration "}" @end) @indent
+(service_block "}" @end) @indent
 (match_block "}" @end) @indent
-(function_declaration "}" @end) @indent
+(function_block "}" @end) @indent

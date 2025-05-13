@@ -1,62 +1,75 @@
 ; Keywords
-(rule_declaration "rules_version" @keyword)
-(service_declaration "service" @keyword)
-(match_block "match" @keyword)
-(allow_rule "allow" @keyword)
-(allow_rule "if" @keyword)
-(function_declaration "function" @keyword)
-(variable_declaration "let" @keyword)
-(variable_declaration "const" @keyword)
-(if_statement "if" @keyword)
-(if_statement "else" @keyword)
-(return_statement "return" @keyword)
+[
+  "let"
+  "function"
+  "return"
+] @keyword
+
+(version_definition "rules_version" @keyword)
+(service_definition "service" @keyword)
+(match_definition "match" @keyword)
+(rule_definition ["if" "allow"] @keyword)
+(function_definition (identifier) @function)
+(rule_definition (action) @constant)
+(path_segment "/" @punctuation.delimiter)
+(member_expression
+    [
+        ((identifier) @function.member)*
+        (call_expression (identifier) @function.member)*
+    ]
+    .
+)
+
 ; Operators
 [
-  "=" ":" "+" "-" "*" "/" "%" "<" ">" "<=" ">=" "==" "!=" "&&" "||" "?" "in" "is"
+  "="
+  ":"
+  "+"
+  "-"
+  "*"
+  "/"
+  "%"
+  "<"
+  ">"
+  "<="
+  ">="
+  "=="
+  "!="
+  "&&"
+  "||"
+  "?"
+  "in"
+  "is"
 ] @operator
 
 ; Punctuation
-["(" ")" "{" "}" "[" "]" "," "." ";"] @punctuation.delimiter
-(path "/" @ponctuation.special) @none
-(segment
-    "{" @ponctuation.special
-    "}" @ponctuation.special) @none
+[
+  "$("
+  "("
+  ")"
+  "{"
+  "}"
+  "["
+  "]"
+] @punctuation.bracket
 
-; Strings
+[
+  "."
+  ","
+  ";"
+] @punctuation.delimiter
+
+; primitives
 (string) @string
-
-; Numbers
 (number) @number
-
-; Booleans
 (boolean) @boolean
+(null) @constant
 
-
-; Functions
-(function_declaration (identifier) @function)
-(function_call (identifier) @function)
-
-; Variables
-(identifier) @variable
-
-; Parameters
-(parameter_list (identifier) @parameter)
-
-; Fields
-(field_access (identifier) @property)
-
-; Operations
-(operation) @constant
+; types
+(type) @type
 
 ; Service names
 (service_name) @type
-
-; Paths
-(path) @string.special
-
-; Database paths
-(database_path
-    "/databases/" @string.special) @none
 
 ; Comments
 (comment) @comment

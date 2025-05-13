@@ -1,24 +1,20 @@
-; Rules version
-(rule_declaration
-  "rules_version" @name
-  (string) @context) @item
+(version_definition
+  "rules_version" @context
+  (string) @name) @item
 
-; Service declarations
-(service_declaration
-    "service" @name
-    (service_name) @context) @item
+(service_definition
+    "service" @context
+    (service_name) @name) @item
 
-; Match blocks
-(match_block
-    "match" @name
-    (path) @context) @item
+(match_definition
+    "match" @context
+    (path) @name) @item
 
-; Function declarations
-(function_declaration
-    "function" @name
-    (identifier) @context) @item
+(function_definition
+    "function" @context
+    (identifier) @name) @item
 
-; Allow rules
-(allow_rule
-  "allow" @name
-  (operation_list) @context) @item
+(rule_definition
+   "allow" @context
+   (action) @name
+   ("," @name (action) @name)+) @item

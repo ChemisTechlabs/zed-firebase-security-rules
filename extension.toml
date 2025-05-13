@@ -1,6 +1,6 @@
 id = "firebase-security-rules"
 name = "Firebase Security Rules"
-version = "0.0.2"
+version = "0.1.0"
 schema_version = 1
 authors = ["Guilherme Caldas <gcaldas@chemis.tech>"]
 description = "Firebase Security Rules language syntax highlight."
@@ -8,4 +8,4 @@ repository = "https://github.com/ChemisTechlabs/zed-firebase-security-rules"
 
 [grammars.firebase_rules]
 repository = "https://github.com/ChemisTechlabs/tree-sitter-firebase-security-rules"
-commit = "daee7aeba39f8d4b9e9b342b2c3467b0117babeb"
+commit = "065c18e6f18436b1d4594f2cb2d6e448a987b737"
